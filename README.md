@@ -2,7 +2,7 @@
 
 Enables previews of XD files [(Adobe Experience Designer)][adobe-xd].
 
-Based on Apple's [QuickLookSketch][quick-look-sketch].
+[QL plugin discussion][ql-win-issue].
 
 [XD format reference][xd-format-reference].
 
@@ -43,4 +43,4 @@ kMDItemContentType = "com.adobe.xd.project"
 
 [adobe-xd]: https://www.adobe.com/ca/products/xd.html
 [xd-format-reference]: https://docs.fileformat.com/web/xd
-[quick-look-sketch]: https://developer.apple.com/library/archive/samplecode/QuickLookSketch/Introduction/Intro.html
+[ql-win-issue]: https://github.com/QL-Win/QuickLook/issues/307#issuecomment-1473989813
