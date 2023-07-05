@@ -4,13 +4,10 @@
 //
 //  Created by Ogbizi on 2023-07-02.
 //
-
-import Foundation
-import Cocoa
-import Quartz
-import SSZipArchive
 import QuickLook
+import QuickLookUI
 import QuickLookThumbnailing
+import SSZipArchive
 
 @available(macOS 12.0, *)
 class QuickLookXDPlugin: NSViewController, QLPreviewingController {
