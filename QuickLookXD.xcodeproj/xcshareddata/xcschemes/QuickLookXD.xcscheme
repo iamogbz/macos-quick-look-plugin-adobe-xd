@@ -72,7 +72,7 @@
       </MacroExpansion>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-g $(HOME)/Library/QuickLook/$(FULL_PRODUCT_NAME)"
+            argument = "-g ${HOME}/Library/QuickLook/${FULL_PRODUCT_NAME}"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -88,11 +88,11 @@
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "$(HOME)/Sources/github/iamogbz/macos-quick-look-plugin-adobe-xd/docs/example/file01.xd"
+            argument = "${HOME}/Sources/github/iamogbz/macos-quick-look-plugin-adobe-xd/docs/example/file01.xd"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "$(HOME)/Sources/github/iamogbz/macos-quick-look-plugin-adobe-xd/docs/example/file02.xd"
+            argument = "${HOME}/Sources/github/iamogbz/macos-quick-look-plugin-adobe-xd/docs/example/file02.xd"
             isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>

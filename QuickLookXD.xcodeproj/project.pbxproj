@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		149F81542A5532B4003078F1 /* SSZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149F81532A5532B4003078F1 /* SSZipArchive.framework */; };
 		149F81552A5532B4003078F1 /* SSZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 149F81532A5532B4003078F1 /* SSZipArchive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		149F815F2A55BE56003078F1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E452A5529B2001221C8 /* Cocoa.framework */; };
+		149F81622A55BE8D003078F1 /* Cocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E452A5529B2001221C8 /* Cocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14B618B12A550C460022D563 /* Pods_QuickLookXD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD71E06BE3F3F49B5B83F4D /* Pods_QuickLookXD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14C982762A5207AE003F5C7C /* QuickLookXDPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C982752A5207AE003F5C7C /* QuickLookXDPlugin.swift */; };
 		14CD3E372A5525DC001221C8 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */; };
@@ -30,9 +32,10 @@
 			dstPath = "./Frameworks";
 			dstSubfolderSpec = 6;
 			files = (
-				14CD3E3A2A5525DD001221C8 /* QuickLookThumbnailing.framework in Embed Frameworks */,
-				14CD3E3C2A5525DF001221C8 /* QuickLookUI.framework in Embed Frameworks */,
+				149F81622A55BE8D003078F1 /* Cocoa.framework in Embed Frameworks */,
 				14CD3E382A5525DC001221C8 /* QuickLook.framework in Embed Frameworks */,
+				14CD3E3C2A5525DF001221C8 /* QuickLookUI.framework in Embed Frameworks */,
+				14CD3E3A2A5525DD001221C8 /* QuickLookThumbnailing.framework in Embed Frameworks */,
 				14B618B12A550C460022D563 /* Pods_QuickLookXD.framework in Embed Frameworks */,
 				149F81552A5532B4003078F1 /* SSZipArchive.framework in Embed Frameworks */,
 			);
@@ -42,7 +45,7 @@
 		440BBDFA0B0537B10075B7E5 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "$(HOME)/Library/QuickLook";
+			dstPath = "${HOME}/Library/QuickLook";
 			dstSubfolderSpec = 0;
 			files = (
 				440BBDE80B0537AC0075B7E5 /* QuickLookXD.qlgenerator in Copy Files */,
@@ -53,8 +56,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		149F81522A5532A9003078F1 /* Pods_QuickLookXD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_QuickLookXD.framework; path = "../../../../Library/Developer/Xcode/DerivedData/QuickLookXD-anldcwhcionfhrehdwpudqytenml/Build/Products/Debug/Pods_QuickLookXD.framework"; sourceTree = "<group>"; };
+		1497C49C2A55C356004C4C03 /* Pods_QuickLookXD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_QuickLookXD.framework; path = "/Users/Emmanuel/Library/Developer/Xcode/DerivedData/QuickLookXD-anldcwhcionfhrehdwpudqytenml/Build/Products/Debug/Pods_QuickLookXD.framework"; sourceTree = "<absolute>"; };
 		149F81532A5532B4003078F1 /* SSZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = SSZipArchive.framework; path = SSZipArchive/SSZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		149F81602A55BE6B003078F1 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		14C982742A5207AE003F5C7C /* QuickLookXD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickLookXD-Bridging-Header.h"; sourceTree = "<group>"; };
 		14C982752A5207AE003F5C7C /* QuickLookXDPlugin.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = QuickLookXDPlugin.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		14CD3E302A552562001221C8 /* QuickLookThumbnailing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookThumbnailing.framework; path = /System/Library/Frameworks/QuickLookThumbnailing.framework; sourceTree = "<absolute>"; };
@@ -77,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				149F815F2A55BE56003078F1 /* Cocoa.framework in Frameworks */,
 				14CD3E372A5525DC001221C8 /* QuickLook.framework in Frameworks */,
 				14CD3E3B2A5525DF001221C8 /* QuickLookUI.framework in Frameworks */,
 				14CD3E392A5525DD001221C8 /* QuickLookThumbnailing.framework in Frameworks */,
@@ -91,7 +96,6 @@
 		089C166AFE841209C02AAC07 /* QuickLookXD */ = {
 			isa = PBXGroup;
 			children = (
-				149F81522A5532A9003078F1 /* Pods_QuickLookXD.framework */,
 				08FB77AFFE84173DC02AAC07 /* Quick Look Generator */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* External Frameworks and Libraries */,
@@ -105,11 +109,13 @@
 		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				14CD3E4B2A552BFB001221C8 /* ApplicationServices.framework */,
 				14CD3E452A5529B2001221C8 /* Cocoa.framework */,
+				149F81602A55BE6B003078F1 /* CoreServices.framework */,
+				14CD3E4B2A552BFB001221C8 /* ApplicationServices.framework */,
 				F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */,
 				14CD3E322A552579001221C8 /* QuickLookUI.framework */,
 				14CD3E302A552562001221C8 /* QuickLookThumbnailing.framework */,
+				1497C49C2A55C356004C4C03 /* Pods_QuickLookXD.framework */,
 			);
 			name = "External Frameworks and Libraries";
 			sourceTree = "<group>";
@@ -267,7 +273,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-QuickLookXD-checkManifestLockResult.txt",
+				"${DERIVED_FILE_DIR}/Pods-QuickLookXD-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -321,10 +327,10 @@
 				DEVELOPMENT_TEAM = 54HE8SFBAE;
 				EAGER_LINKING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+					"${inherited}",
+					"${FRAMEWORK_SEARCH_PATHS_QUOTED_1}",
 				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"${SYSTEM_LIBRARY_DIR}/Frameworks\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -361,10 +367,10 @@
 				DEVELOPMENT_TEAM = 54HE8SFBAE;
 				EAGER_LINKING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+					"${inherited}",
+					"${FRAMEWORK_SEARCH_PATHS_QUOTED_1}",
 				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"${SYSTEM_LIBRARY_DIR}/Frameworks\"";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
