@@ -10,15 +10,15 @@ import QuickLookThumbnailing
 import SSZipArchive
 
 @available(macOS 12.0, *)
-class QuickLookXDPlugin: NSViewController, QLPreviewingController {
+public class QuickLookXDPlugin: NSViewController, QLPreviewingController {
     let imageFileNamePreview = "preview.png"
     let imageFileNameThumbnail = "thumbnail.png"
 
-    override var nibName: NSNib.Name? {
+    public override var nibName: NSNib.Name? {
         return NSNib.Name("QuickLookXDPlugin")
     }
 
-    override func loadView() {
+    public override func loadView() {
         super.loadView()
         // Do any additional setup after loading the view.
     }
@@ -42,7 +42,7 @@ class QuickLookXDPlugin: NSViewController, QLPreviewingController {
         handler(imageFilePath, nil)
     }
 
-    func preparePreviewOfFile(at url: URL, completionHandler handler: @escaping (Error?) -> Void) {
+    public func preparePreviewOfFile(at url: URL, completionHandler handler: @escaping (Error?) -> Void) {
         NSLog("prepare preview: \(url)")
         extractImageOfFile(at: url, imageFileName: self.imageFileNamePreview) { _, error in
            handler(error)
@@ -68,7 +68,7 @@ class QuickLookXDPlugin: NSViewController, QLPreviewingController {
      - Implement providePreview(for:)
      - Implement provideThumbnail(for:)
      */
-    func providePreview(for request: QLFilePreviewRequest, completionHandler: @escaping (QLPreviewReply?, Error?) -> Void) {
+    public func providePreview(for request: QLFilePreviewRequest, completionHandler: @escaping (QLPreviewReply?, Error?) -> Void) {
         NSLog("provide preview: \(request.fileURL)")
         let imageFileName = self.imageFileNamePreview
         extractImageOfFile(at: request.fileURL, imageFileName: imageFileName) { imageFilePath, error in
@@ -84,7 +84,7 @@ class QuickLookXDPlugin: NSViewController, QLPreviewingController {
         }
     }
 
-    func provideThumbnail(for request: QLFileThumbnailRequest, completionHandler: @escaping (QLThumbnailReply?, Error?) -> Void) {
+    public func provideThumbnail(for request: QLFileThumbnailRequest, completionHandler: @escaping (QLThumbnailReply?, Error?) -> Void) {
         NSLog("provide thumbnail: \(request.fileURL)")
         let imageFileName = self.imageFileNameThumbnail
         extractImageOfFile(at: request.fileURL, imageFileName: imageFileName) { imageFilePath, error in

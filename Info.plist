@@ -20,15 +20,15 @@
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
+	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
-	<string>${PRODUCT_BUNDLE_IDENTIFIER}</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFPlugInDynamicRegisterFunction</key>
@@ -38,13 +38,13 @@
 	<key>CFPlugInFactories</key>
 	<dict>
 		<key>${PRODUCT_BUNDLE_IDENTIFIER}</key>
-		<string>QuickLookXDPlugin</string>
+		<string>OBJC_CLASS_$__TtC11QuickLookXD17QuickLookXDPlugin</string>
 	</dict>
 	<key>CFPlugInTypes</key>
 	<dict>
 		<key>5E2D9680-5022-40FA-B806-43349622E5B9</key>
 		<array>
-			<string>${PRODUCT_BUNDLE_IDENTIFIER}</string>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 		</array>
 	</dict>
 	<key>CFPlugInUnloadFunction</key>
@@ -59,23 +59,5 @@
 	<false/>
 	<key>QLThumbnailMinimumSize</key>
 	<real>17</real>
-	<key>NSExtension</key>
-	<dict>
-		<key>NSExtensionAttributes</key>
-		<dict>
-			<key>QLIsDataBasedPreview</key>
-			<false/>
-			<key>QLSupportedContentTypes</key>
-			<array>
-				<string>com.adobe.xd.project</string>
-			</array>
-			<key>QLSupportsSearchableItems</key>
-			<false/>
-		</dict>
-		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.quicklook.preview</string>
-		<key>NSExtensionPrincipalClass</key>
-		<string>${PRODUCT_BUNDLE_IDENTIFIER}.QuickLookXDPlugin</string>
-	</dict>
 </dict>
 </plist>

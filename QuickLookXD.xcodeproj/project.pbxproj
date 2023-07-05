@@ -26,8 +26,8 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		14B618B22A550C460022D563 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = ./Frameworks;
+			buildActionMask = 12;
+			dstPath = "./Frameworks";
 			dstSubfolderSpec = 6;
 			files = (
 				14CD3E3A2A5525DD001221C8 /* QuickLookThumbnailing.framework in Embed Frameworks */,
@@ -330,10 +330,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_KEY_NSPrincipalClass = QuickLookXDPlugin;
+				INFOPLIST_KEY_NSPrincipalClass = "";
 				INSTALL_PATH = /Library/QuickLook;
 				LIBRARY_STYLE = Bundle;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				OTHER_SWIFT_FLAGS = "";
 				PRELINK_LIBS = SSZipArchive;
 				"PRELINK_LIBS[arch=*]" = SSZipArchive;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qbrkts.quicklookxd;
@@ -368,10 +369,11 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_KEY_NSPrincipalClass = QuickLookXDPlugin;
+				INFOPLIST_KEY_NSPrincipalClass = "";
 				INSTALL_PATH = /Library/QuickLook;
 				LIBRARY_STYLE = Bundle;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				OTHER_SWIFT_FLAGS = "";
 				PRELINK_LIBS = SSZipArchive;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qbrkts.quicklookxd;
 				PRODUCT_NAME = QuickLookXD;
