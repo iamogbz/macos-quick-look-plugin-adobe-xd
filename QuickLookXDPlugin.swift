@@ -102,7 +102,7 @@ public class QuickLookXDPlugin: NSViewController, QLPreviewingController {
     }
   }
   
-  static func generatorFactory(args: Any...) {
+  public static func generatorFactory() {
     NSLog("QuickLookXD.generatorFactory")
   }
 }

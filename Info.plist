@@ -38,7 +38,7 @@
 	<key>CFPlugInFactories</key>
 	<dict>
 		<key>${PRODUCT_BUNDLE_IDENTIFIER}</key>
-		<string>OBJC_CLASS_$__TtC11QuickLookXD17QuickLookXDPlugin</string>
+		<string>$s11QuickLookXD0aB8XDPluginC16generatorFactoryyyFZ</string>
 	</dict>
 	<key>CFPlugInTypes</key>
 	<dict>
