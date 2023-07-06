@@ -18,5 +18,4 @@ jobs:
           xcode: ^14
           action: build
           configuration: release
-          code-sign-identity: '-'
           verbosity: verbose

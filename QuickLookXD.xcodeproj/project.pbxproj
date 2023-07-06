@@ -23,6 +23,7 @@
 		1497C4A72A55C6D2004C4C03 /* QuickLookUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E322A552579001221C8 /* QuickLookUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1497C4A82A55C6D3004C4C03 /* SSZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149F81532A5532B4003078F1 /* SSZipArchive.framework */; };
 		1497C4A92A55C6D3004C4C03 /* SSZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 149F81532A5532B4003078F1 /* SSZipArchive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14B02F552A5762EE00E68578 /* .github in Resources */ = {isa = PBXBuildFile; fileRef = 14B02F542A5762EE00E68578 /* .github */; };
 		14F06C002A572C1C007D7E47 /* docs in Resources */ = {isa = PBXBuildFile; fileRef = 14F06BFF2A572C1C007D7E47 /* docs */; };
 		440BBDE80B0537AC0075B7E5 /* QuickLookXD.qlgenerator in Copy Files */ = {isa = PBXBuildFile; fileRef = 8D576316048677EA00EA77CD /* QuickLookXD.qlgenerator */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49A704867FD3000E48DA /* InfoPlist.strings */; };
@@ -67,6 +68,7 @@
 		1497C49C2A55C356004C4C03 /* Pods_QuickLookXD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_QuickLookXD.framework; path = "/Users/Emmanuel/Library/Developer/Xcode/DerivedData/QuickLookXD-anldcwhcionfhrehdwpudqytenml/Build/Products/Debug/Pods_QuickLookXD.framework"; sourceTree = "<absolute>"; };
 		149F81532A5532B4003078F1 /* SSZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = SSZipArchive.framework; path = SSZipArchive/SSZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		149F81602A55BE6B003078F1 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
+		14B02F542A5762EE00E68578 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
 		14CD3E302A552562001221C8 /* QuickLookThumbnailing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookThumbnailing.framework; path = /System/Library/Frameworks/QuickLookThumbnailing.framework; sourceTree = "<absolute>"; };
 		14CD3E322A552579001221C8 /* QuickLookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookUI.framework; path = /System/Library/Frameworks/QuickLookUI.framework; sourceTree = "<absolute>"; };
 		14CD3E452A5529B2001221C8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -129,6 +131,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				14B02F542A5762EE00E68578 /* .github */,
 				14F06BFF2A572C1C007D7E47 /* docs */,
 				622150340BBDD60C00126F4B /* Info.plist */,
 				14F06C012A572C3C007D7E47 /* README.md */,
@@ -249,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B02F552A5762EE00E68578 /* .github in Resources */,
 				8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */,
 				14F06C002A572C1C007D7E47 /* docs in Resources */,
 			);
