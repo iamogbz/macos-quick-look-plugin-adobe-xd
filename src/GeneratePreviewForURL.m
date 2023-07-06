@@ -15,7 +15,7 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
 {
 	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 
-    CGImageRef image = GetImageFromDocument((NSURL *)url, @"preview.png", @"thumbnail.png");
+    CGImageRef image = GetImageFromDocument((NSURL *)url, IMAGE_PREVIEW_FILENAME, IMAGE_THUMBNAIL_FILENAME);
 
     if (!image) {
         [pool release];

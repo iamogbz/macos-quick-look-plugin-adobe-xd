@@ -8,7 +8,7 @@ OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thum
 {
     NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 
-    CGImageRef image = GetImageFromDocument((NSURL *)url, @"thumbnail.png", @"preview.png");
+    CGImageRef image = GetImageFromDocument((NSURL *)url, IMAGE_THUMBNAIL_FILENAME, IMAGE_PREVIEW_FILENAME);
 
     if (!image) {
         [pool release];
@@ -16,7 +16,9 @@ OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thum
         return noErr;
     }
 
-    CGSize canvasSize = CGSizeMake(MIN(maxSize.width, CGImageGetWidth(image)), MIN(maxSize.height,CGImageGetHeight(image)));
+    CGSize imageSize = CGSizeMake(CGImageGetWidth(image), CGImageGetHeight(image));
+    CGFloat scaleFactor = MIN(maxSize.width / imageSize.width, maxSize.height / imageSize.height);
+    CGSize canvasSize = CGSizeMake(imageSize.width * scaleFactor, imageSize.height * scaleFactor);
 
     // Thumbnail will be drawn with maximum resolution for desired thumbnail request
     // Here we create a graphics context to draw the Quick Look Thumbnail in.
