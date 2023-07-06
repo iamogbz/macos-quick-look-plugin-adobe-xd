@@ -101,8 +101,4 @@ public class QuickLookXDPlugin: NSViewController, QLPreviewingController {
       }
     }
   }
-  
-  public static func generatorFactory() {
-    NSLog("QuickLookXD.generatorFactory")
-  }
 }

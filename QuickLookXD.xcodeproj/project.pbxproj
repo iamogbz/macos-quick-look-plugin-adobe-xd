@@ -7,37 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		149F81542A5532B4003078F1 /* SSZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149F81532A5532B4003078F1 /* SSZipArchive.framework */; };
-		149F81552A5532B4003078F1 /* SSZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 149F81532A5532B4003078F1 /* SSZipArchive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		149F815F2A55BE56003078F1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E452A5529B2001221C8 /* Cocoa.framework */; };
-		149F81622A55BE8D003078F1 /* Cocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E452A5529B2001221C8 /* Cocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		14B618B12A550C460022D563 /* Pods_QuickLookXD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD71E06BE3F3F49B5B83F4D /* Pods_QuickLookXD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1497C49D2A55C6CE004C4C03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E452A5529B2001221C8 /* Cocoa.framework */; };
+		1497C49E2A55C6CE004C4C03 /* Cocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E452A5529B2001221C8 /* Cocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1497C4A02A55C6CF004C4C03 /* Pods_QuickLookXD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD71E06BE3F3F49B5B83F4D /* Pods_QuickLookXD.framework */; };
+		1497C4A12A55C6CF004C4C03 /* Pods_QuickLookXD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD71E06BE3F3F49B5B83F4D /* Pods_QuickLookXD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1497C4A22A55C6D0004C4C03 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */; };
+		1497C4A32A55C6D0004C4C03 /* QuickLook.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1497C4A42A55C6D1004C4C03 /* QuickLookThumbnailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E302A552562001221C8 /* QuickLookThumbnailing.framework */; };
+		1497C4A52A55C6D1004C4C03 /* QuickLookThumbnailing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E302A552562001221C8 /* QuickLookThumbnailing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1497C4A62A55C6D2004C4C03 /* QuickLookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E322A552579001221C8 /* QuickLookUI.framework */; };
+		1497C4A72A55C6D2004C4C03 /* QuickLookUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E322A552579001221C8 /* QuickLookUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1497C4A82A55C6D3004C4C03 /* SSZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149F81532A5532B4003078F1 /* SSZipArchive.framework */; };
+		1497C4A92A55C6D3004C4C03 /* SSZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 149F81532A5532B4003078F1 /* SSZipArchive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1497C4AB2A561981004C4C03 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1497C4AA2A561981004C4C03 /* Main.swift */; };
 		14C982762A5207AE003F5C7C /* QuickLookXDPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C982752A5207AE003F5C7C /* QuickLookXDPlugin.swift */; };
-		14CD3E372A5525DC001221C8 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */; };
-		14CD3E382A5525DC001221C8 /* QuickLook.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		14CD3E392A5525DD001221C8 /* QuickLookThumbnailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E302A552562001221C8 /* QuickLookThumbnailing.framework */; };
-		14CD3E3A2A5525DD001221C8 /* QuickLookThumbnailing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E302A552562001221C8 /* QuickLookThumbnailing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		14CD3E3B2A5525DF001221C8 /* QuickLookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E322A552579001221C8 /* QuickLookUI.framework */; };
-		14CD3E3C2A5525DF001221C8 /* QuickLookUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E322A552579001221C8 /* QuickLookUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14D7EE942A5371D500DC5702 /* QuickLookXDPlugin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D7EE922A5371D500DC5702 /* QuickLookXDPlugin.xib */; };
 		440BBDE80B0537AC0075B7E5 /* QuickLookXD.qlgenerator in Copy Files */ = {isa = PBXBuildFile; fileRef = 8D576316048677EA00EA77CD /* QuickLookXD.qlgenerator */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		88D0CE9DFEA8FCB4AEBF1D6E /* Pods_QuickLookXD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD71E06BE3F3F49B5B83F4D /* Pods_QuickLookXD.framework */; };
 		8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49A704867FD3000E48DA /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		14B618B22A550C460022D563 /* Embed Frameworks */ = {
+		1497C49F2A55C6CE004C4C03 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = "./Frameworks";
+			buildActionMask = 2147483647;
+			dstPath = ./Frameworks;
 			dstSubfolderSpec = 6;
 			files = (
-				149F81622A55BE8D003078F1 /* Cocoa.framework in Embed Frameworks */,
-				14CD3E382A5525DC001221C8 /* QuickLook.framework in Embed Frameworks */,
-				14CD3E3C2A5525DF001221C8 /* QuickLookUI.framework in Embed Frameworks */,
-				14CD3E3A2A5525DD001221C8 /* QuickLookThumbnailing.framework in Embed Frameworks */,
-				14B618B12A550C460022D563 /* Pods_QuickLookXD.framework in Embed Frameworks */,
-				149F81552A5532B4003078F1 /* SSZipArchive.framework in Embed Frameworks */,
+				1497C49E2A55C6CE004C4C03 /* Cocoa.framework in Embed Frameworks */,
+				1497C4A92A55C6D3004C4C03 /* SSZipArchive.framework in Embed Frameworks */,
+				1497C4A72A55C6D2004C4C03 /* QuickLookUI.framework in Embed Frameworks */,
+				1497C4A12A55C6CF004C4C03 /* Pods_QuickLookXD.framework in Embed Frameworks */,
+				1497C4A32A55C6D0004C4C03 /* QuickLook.framework in Embed Frameworks */,
+				1497C4A52A55C6D1004C4C03 /* QuickLookThumbnailing.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		1497C49C2A55C356004C4C03 /* Pods_QuickLookXD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_QuickLookXD.framework; path = "/Users/Emmanuel/Library/Developer/Xcode/DerivedData/QuickLookXD-anldcwhcionfhrehdwpudqytenml/Build/Products/Debug/Pods_QuickLookXD.framework"; sourceTree = "<absolute>"; };
+		1497C4AA2A561981004C4C03 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		149F81532A5532B4003078F1 /* SSZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = SSZipArchive.framework; path = SSZipArchive/SSZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		149F81602A55BE6B003078F1 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		14C982742A5207AE003F5C7C /* QuickLookXD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickLookXD-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -81,12 +83,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				149F815F2A55BE56003078F1 /* Cocoa.framework in Frameworks */,
-				14CD3E372A5525DC001221C8 /* QuickLook.framework in Frameworks */,
-				14CD3E3B2A5525DF001221C8 /* QuickLookUI.framework in Frameworks */,
-				14CD3E392A5525DD001221C8 /* QuickLookThumbnailing.framework in Frameworks */,
-				88D0CE9DFEA8FCB4AEBF1D6E /* Pods_QuickLookXD.framework in Frameworks */,
-				149F81542A5532B4003078F1 /* SSZipArchive.framework in Frameworks */,
+				1497C4A02A55C6CF004C4C03 /* Pods_QuickLookXD.framework in Frameworks */,
+				1497C4A82A55C6D3004C4C03 /* SSZipArchive.framework in Frameworks */,
+				1497C49D2A55C6CE004C4C03 /* Cocoa.framework in Frameworks */,
+				1497C4A42A55C6D1004C4C03 /* QuickLookThumbnailing.framework in Frameworks */,
+				1497C4A62A55C6D2004C4C03 /* QuickLookUI.framework in Frameworks */,
+				1497C4A22A55C6D0004C4C03 /* QuickLook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +138,7 @@
 				14C982752A5207AE003F5C7C /* QuickLookXDPlugin.swift */,
 				14C982742A5207AE003F5C7C /* QuickLookXD-Bridging-Header.h */,
 				14D7EE922A5371D500DC5702 /* QuickLookXDPlugin.xib */,
+				1497C4AA2A561981004C4C03 /* Main.swift */,
 			);
 			name = "Quick Look Generator";
 			sourceTree = "<group>";
@@ -189,7 +192,7 @@
 				8D576311048677EA00EA77CD /* Sources */,
 				8D576313048677EA00EA77CD /* Frameworks */,
 				8D576315048677EA00EA77CD /* Rez */,
-				14B618B22A550C460022D563 /* Embed Frameworks */,
+				1497C49F2A55C6CE004C4C03 /* Embed Frameworks */,
 				440BBDFA0B0537B10075B7E5 /* Copy Files */,
 			);
 			buildRules = (
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1497C4AB2A561981004C4C03 /* Main.swift in Sources */,
 				14C982762A5207AE003F5C7C /* QuickLookXDPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,7 +365,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 54HE8SFBAE;
@@ -394,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -426,6 +430,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx13.3;
 			};
 			name = Debug;
 		};
@@ -433,6 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -463,6 +469,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				SDKROOT = macosx13.3;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
