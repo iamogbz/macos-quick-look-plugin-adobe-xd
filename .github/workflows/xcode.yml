@@ -19,3 +19,4 @@ jobs:
           action: build
           configuration: Debug
           verbosity: verbose
+          workspace: QuickLookXD.xcworkspace
