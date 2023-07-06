@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build for macos x target
+    name: latest macos x
     runs-on: macos-latest
     steps:
       - name: Checkout
@@ -16,6 +16,7 @@ jobs:
         uses: mxcl/xcodebuild@v2
         with:
           xcode: ^14
+          action: build
           configuration: release
           code-sign-identity: '-'
           verbosity: verbose
