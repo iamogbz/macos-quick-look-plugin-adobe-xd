@@ -17,5 +17,5 @@ jobs:
         with:
           xcode: ^14
           action: build
-          configuration: release
+          configuration: Release
           verbosity: verbose
