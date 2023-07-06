@@ -18,5 +18,6 @@ jobs:
           xcode: ^14
           action: build
           configuration: Debug
+          scheme: QuickLookXD
           verbosity: verbose
           workspace: QuickLookXD.xcworkspace
