@@ -7,14 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14677FED2A56BE1400DAB587 /* DataReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 14677FE62A56BE1400DAB587 /* DataReader.h */; };
-		14677FF02A56BE1400DAB587 /* SwatchDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 14677FE92A56BE1400DAB587 /* SwatchDocument.h */; };
 		14677FF62A56BEB000DAB587 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 14677FD72A56B97700DAB587 /* GenerateThumbnailForURL.m */; };
 		14677FF72A56BEB100DAB587 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 14677FD32A56B3D000DAB587 /* GeneratePreviewForURL.m */; };
-		14677FF92A56BEB500DAB587 /* SwatchDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 14677FE82A56BE1400DAB587 /* SwatchDocument.m */; };
-		14677FFA2A56BEB600DAB587 /* SwatchDocument.h in Sources */ = {isa = PBXBuildFile; fileRef = 14677FE92A56BE1400DAB587 /* SwatchDocument.h */; };
-		14677FFB2A56BEB800DAB587 /* DataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 14677FEA2A56BE1400DAB587 /* DataReader.m */; };
 		14677FFE2A56C24800DAB587 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 14677FFD2A56C24800DAB587 /* main.c */; };
+		146780002A56D26900DAB587 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 14677FFF2A56D26900DAB587 /* Document.m */; };
 		1497C49D2A55C6CE004C4C03 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E452A5529B2001221C8 /* Cocoa.framework */; };
 		1497C49E2A55C6CE004C4C03 /* Cocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E452A5529B2001221C8 /* Cocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1497C4A02A55C6CF004C4C03 /* Pods_QuickLookXD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD71E06BE3F3F49B5B83F4D /* Pods_QuickLookXD.framework */; };
@@ -35,7 +31,7 @@
 		1497C49F2A55C6CE004C4C03 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "./Frameworks";
+			dstPath = ./Frameworks;
 			dstSubfolderSpec = 6;
 			files = (
 				1497C49E2A55C6CE004C4C03 /* Cocoa.framework in Embed Frameworks */,
@@ -64,11 +60,9 @@
 /* Begin PBXFileReference section */
 		14677FD32A56B3D000DAB587 /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GeneratePreviewForURL.m; path = src/GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		14677FD72A56B97700DAB587 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GenerateThumbnailForURL.m; path = src/GenerateThumbnailForURL.m; sourceTree = "<group>"; };
-		14677FE62A56BE1400DAB587 /* DataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataReader.h; path = src/DataReader.h; sourceTree = "<group>"; };
-		14677FE82A56BE1400DAB587 /* SwatchDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwatchDocument.m; path = src/SwatchDocument.m; sourceTree = "<group>"; };
-		14677FE92A56BE1400DAB587 /* SwatchDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwatchDocument.h; path = src/SwatchDocument.h; sourceTree = "<group>"; };
-		14677FEA2A56BE1400DAB587 /* DataReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataReader.m; path = src/DataReader.m; sourceTree = "<group>"; };
 		14677FFD2A56C24800DAB587 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = src/main.c; sourceTree = "<group>"; };
+		14677FFF2A56D26900DAB587 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Document.m; path = src/Document.m; sourceTree = "<group>"; };
+		146780012A56DACF00DAB587 /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Document.h; path = src/Document.h; sourceTree = "<group>"; };
 		1497C49C2A55C356004C4C03 /* Pods_QuickLookXD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_QuickLookXD.framework; path = "/Users/Emmanuel/Library/Developer/Xcode/DerivedData/QuickLookXD-anldcwhcionfhrehdwpudqytenml/Build/Products/Debug/Pods_QuickLookXD.framework"; sourceTree = "<absolute>"; };
 		149F81532A5532B4003078F1 /* SSZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = SSZipArchive.framework; path = SSZipArchive/SSZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		149F81602A55BE6B003078F1 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
@@ -144,12 +138,10 @@
 			isa = PBXGroup;
 			children = (
 				14677FFD2A56C24800DAB587 /* main.c */,
-				14677FE62A56BE1400DAB587 /* DataReader.h */,
-				14677FEA2A56BE1400DAB587 /* DataReader.m */,
-				14677FE92A56BE1400DAB587 /* SwatchDocument.h */,
-				14677FE82A56BE1400DAB587 /* SwatchDocument.m */,
 				14677FD32A56B3D000DAB587 /* GeneratePreviewForURL.m */,
 				14677FD72A56B97700DAB587 /* GenerateThumbnailForURL.m */,
+				14677FFF2A56D26900DAB587 /* Document.m */,
+				146780012A56DACF00DAB587 /* Document.h */,
 			);
 			name = "Quick Look Generator";
 			sourceTree = "<group>";
@@ -187,8 +179,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14677FED2A56BE1400DAB587 /* DataReader.h in Headers */,
-				14677FF02A56BE1400DAB587 /* SwatchDocument.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,10 +292,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14677FFB2A56BEB800DAB587 /* DataReader.m in Sources */,
-				14677FFA2A56BEB600DAB587 /* SwatchDocument.h in Sources */,
 				14677FFE2A56C24800DAB587 /* main.c in Sources */,
-				14677FF92A56BEB500DAB587 /* SwatchDocument.m in Sources */,
+				146780002A56D26900DAB587 /* Document.m in Sources */,
 				14677FF62A56BEB000DAB587 /* GenerateThumbnailForURL.m in Sources */,
 				14677FF72A56BEB100DAB587 /* GeneratePreviewForURL.m in Sources */,
 			);

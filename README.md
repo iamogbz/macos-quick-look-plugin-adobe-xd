@@ -4,6 +4,8 @@ Enables previews of XD files [(Adobe Experience Designer)][adobe-xd].
 
 [QL plugin discussion][ql-win-issue].
 
+Based on [QuickLookASE][ql-ase].
+
 [XD format reference][xd-format-reference].
 
 <!--
@@ -44,3 +46,4 @@ kMDItemContentType = "com.adobe.xd.project"
 [adobe-xd]: https://www.adobe.com/ca/products/xd.html
 [xd-format-reference]: https://docs.fileformat.com/web/xd
 [ql-win-issue]: https://github.com/QL-Win/QuickLook/issues/307#issuecomment-1473989813
+[ql-ase]: https://github.com/rsodre/QuickLookASE
