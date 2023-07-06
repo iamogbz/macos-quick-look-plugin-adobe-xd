@@ -23,6 +23,7 @@
 		1497C4A72A55C6D2004C4C03 /* QuickLookUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14CD3E322A552579001221C8 /* QuickLookUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1497C4A82A55C6D3004C4C03 /* SSZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149F81532A5532B4003078F1 /* SSZipArchive.framework */; };
 		1497C4A92A55C6D3004C4C03 /* SSZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 149F81532A5532B4003078F1 /* SSZipArchive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14F06C002A572C1C007D7E47 /* docs in Resources */ = {isa = PBXBuildFile; fileRef = 14F06BFF2A572C1C007D7E47 /* docs */; };
 		440BBDE80B0537AC0075B7E5 /* QuickLookXD.qlgenerator in Copy Files */ = {isa = PBXBuildFile; fileRef = 8D576316048677EA00EA77CD /* QuickLookXD.qlgenerator */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49A704867FD3000E48DA /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -71,12 +72,13 @@
 		14CD3E452A5529B2001221C8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		14CD3E4B2A552BFB001221C8 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
 		14E6041629207D6600F29499 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		14F06BFF2A572C1C007D7E47 /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = "<group>"; };
+		14F06C012A572C3C007D7E47 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1AD71E06BE3F3F49B5B83F4D /* Pods_QuickLookXD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickLookXD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		622150340BBDD60C00126F4B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7216DC60EEF9EF77E634BEDF /* Pods-QuickLookXD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickLookXD.debug.xcconfig"; path = "Target Support Files/Pods-QuickLookXD/Pods-QuickLookXD.debug.xcconfig"; sourceTree = "<group>"; };
 		8D576316048677EA00EA77CD /* QuickLookXD.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickLookXD.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		B552E3B261F2B53BF191EFD1 /* Pods-QuickLookXD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickLookXD.release.xcconfig"; path = "Target Support Files/Pods-QuickLookXD/Pods-QuickLookXD.release.xcconfig"; sourceTree = "<group>"; };
-		DB57D0DB1D0DB18600490A66 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = /System/Library/Frameworks/QuickLook.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -127,8 +129,9 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DB57D0DB1D0DB18600490A66 /* README.md */,
+				14F06BFF2A572C1C007D7E47 /* docs */,
 				622150340BBDD60C00126F4B /* Info.plist */,
+				14F06C012A572C3C007D7E47 /* README.md */,
 				8D5B49A704867FD3000E48DA /* InfoPlist.strings */,
 			);
 			name = Resources;
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */,
+				14F06C002A572C1C007D7E47 /* docs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

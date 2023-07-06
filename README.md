@@ -37,9 +37,7 @@ kMDItemContentType = "com.adobe.xd.project"
 
 ## Demo
 
-![Image showing list of files with an XD file in preview](./docs/example/screenshot01.png)
-
-![Image showing list of XD files with thumbnail previews](./docs/example/screenshot02.png)
+![Image showing list of XD files with thumbnails and preview](./docs/example/screenshot01.png)
 
 <!-- Links -->
 
