@@ -38,7 +38,7 @@
 	<key>CFPlugInFactories</key>
 	<dict>
 		<key>${PRODUCT_BUNDLE_IDENTIFIER}</key>
-		<string>$s11QuickLookXD0aB8XDPluginC16generatorFactoryyyFZ</string>
+		<string>QuickLookGeneratorPluginFactory</string>
 	</dict>
 	<key>CFPlugInTypes</key>
 	<dict>
