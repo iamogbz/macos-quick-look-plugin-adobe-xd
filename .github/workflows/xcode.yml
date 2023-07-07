@@ -22,11 +22,11 @@ jobs:
           pod install
           xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD clean build -quiet
           # Create variables to use in packaging
-          export PUBLISH_DIR="/tmp/quicklookxdist"
-          export PUBLISH_ZIP="bundle.zip"
           export BUNDLE_FILEPATH="$(xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD -showBuildSettings 2>&1 | grep CODESIGNING_FOLDER_PATH | cut -d '=' -f2 | tr -d '[:space:]')"
           export BUNDLE_PATH=$(dirname "${BUNDLE_FILEPATH}")
           export BUNDLE_FILE=$(basename "${BUNDLE_FILEPATH}")
+          export PUBLISH_DIR="/tmp/quicklookxdist"
+          export PUBLISH_ZIP="bundle.zip"
           # Enter the built generator bundle directory
           echo "[${BUNDLE_PATH}]:"
           cd "${BUNDLE_PATH}" && ls
@@ -42,18 +42,16 @@ jobs:
           cp "${PUBLISH_ZIP}" "${PUBLISH_DIR}"
           echo "[${PUBLISH_DIR}]:" && ls "${PUBLISH_DIR}"
           # Make the packaging variables available
-          echo "PUBLISH_DIR=${PUBLISH_DIR}" >> "$GITHUB_ENV"
-          echo "PUBLISH_ZIP=${PUBLISH_ZIP}" >> "$GITHUB_ENV"
           echo "BUNDLE_PATH=${BUNDLE_PATH}" >> "$GITHUB_ENV"
           echo "BUNDLE_FILE=${BUNDLE_FILE}" >> "$GITHUB_ENV"
+          echo "PUBLISH_DIR=${PUBLISH_DIR}" >> "$GITHUB_ENV"
+          echo "PUBLISH_ZIP=${PUBLISH_ZIP}" >> "$GITHUB_ENV"
       - uses: actions/upload-artifact@v3
         with:
-          name: ${{ env.BUNDLE_FILE }}
-          path: ${{ env.BUNDLE_PATH }}/${{ env.BUNDLE_FILE }}
-      - uses: actions/upload-artifact@v3
-        with:
-          name: ${{ env.PUBLISH_ZIP }}
-          path: ${{ env.PUBLISH_DIR }}/${{ env.PUBLISH_ZIP }}
+          path: |
+            ${{ env.BUNDLE_PATH }}/${{ env.BUNDLE_FILE }}
+            ${{ env.PUBLISH_DIR }}/${{ env.PUBLISH_ZIP }}
+          retention-days: 13
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main' && github.actor != 'dependabot[bot]' && github.actor != 'dependabot-preview[bot]'
