@@ -21,12 +21,16 @@ jobs:
         run: |
           pod install
           xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD clean build
+          export BUILT_GENERATOR_LOCATION="/tmp/dist"
+          mkdir -p ${BUILT_GENERATOR_LOCATION}
+          export BUILT_GENERATOR_FILENAME="$(xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD -showBuildSettings 2>&1 | grep CODESIGNING_FOLDER_PATH | cut -d "=" -f2 | tr -d '[:space:]')"
+          cp -r ${BUILT_GENERATOR_FILENAME} ${BUILT_GENERATOR_LOCATION}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.actor != 'dependabot[bot]' && github.actor != 'dependabot-preview[bot]'
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ${{ env.BUILT_GENERATOR_LOCATION }}
           publish_branch: dist
           destination_dir: ${{ github.sha }}
           keep_files: true
