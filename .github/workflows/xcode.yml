@@ -20,10 +20,12 @@ jobs:
       - name: Build
         run: |
           pod install
-          xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD clean build
+          xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD clean build -quiet
           export BUILT_GENERATOR_LOCATION="/tmp/dist"
+          echo "Making folder: ${BUILT_GENERATOR_LOCATION}"
           mkdir -p ${BUILT_GENERATOR_LOCATION}
-          export BUILT_GENERATOR_FILENAME="$(xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD -showBuildSettings 2>&1 | grep CODESIGNING_FOLDER_PATH | cut -d "=" -f2 | tr -d '[:space:]')"
+          export BUILT_GENERATOR_FILENAME=$(xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD -showBuildSettings 2>&1 | grep CODESIGNING_FOLDER_PATH | cut -d '=' -f2 | tr -d '[:space:]')
+          echo "Copying: ${BUILT_GENERATOR_FILENAME} >>> ${BUILT_GENERATOR_LOCATION}"
           cp -r ${BUILT_GENERATOR_FILENAME} ${BUILT_GENERATOR_LOCATION}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
