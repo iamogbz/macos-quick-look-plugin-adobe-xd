@@ -44,13 +44,12 @@ jobs:
           # Make the packaging variables available
           echo "BUNDLE_PATH=${BUNDLE_PATH}" >> "$GITHUB_ENV"
           echo "BUNDLE_FILE=${BUNDLE_FILE}" >> "$GITHUB_ENV"
-          echo "PUBLISH_DIR=${PUBLISH_DIR}" >> "$GITHUB_ENV"
           echo "PUBLISH_ZIP=${PUBLISH_ZIP}" >> "$GITHUB_ENV"
       - uses: actions/upload-artifact@v3
         with:
           path: |
             ${{ env.BUNDLE_PATH }}/${{ env.BUNDLE_FILE }}
-            ${{ env.PUBLISH_DIR }}/${{ env.PUBLISH_ZIP }}
+            ${{ env.BUNDLE_PATH }}/${{ env.PUBLISH_ZIP }}
           retention-days: 13
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
