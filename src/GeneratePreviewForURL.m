@@ -25,7 +25,6 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
   
   CGSize imageSize = CGSizeMake(CGImageGetWidth(image), CGImageGetHeight(image));
   
-  // Preview will be drawn in a vectorized context
   // Here we create a graphics context to draw the Quick Look Preview in
   CGContextRef cgContext = QLPreviewRequestCreateContext(preview, imageSize, false, NULL);
   if(cgContext) {

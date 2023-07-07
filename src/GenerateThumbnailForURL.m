@@ -16,12 +16,12 @@ OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thum
     return noErr;
   }
   
+  // Thumbnail will be drawn with maximum resolution for desired thumbnail request
   CGSize imageSize = CGSizeMake(CGImageGetWidth(image), CGImageGetHeight(image));
   CGFloat scaleFactor = MIN(maxSize.width / imageSize.width, maxSize.height / imageSize.height);
   CGSize canvasSize = CGSizeMake(imageSize.width * scaleFactor, imageSize.height * scaleFactor);
   
-  // Thumbnail will be drawn with maximum resolution for desired thumbnail request
-  // Here we create a graphics context to draw the Quick Look Thumbnail in.
+  // Here we create a graphics context to draw the Quick Look Thumbnail in
   CGContextRef cgContext = QLThumbnailRequestCreateContext(thumbnail, canvasSize, false, NULL);
   if(cgContext) {
     CGRect canvas = CGRectMake(0, 0, canvasSize.width, canvasSize.height);
