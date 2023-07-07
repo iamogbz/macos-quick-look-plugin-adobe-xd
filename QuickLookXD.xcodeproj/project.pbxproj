@@ -111,8 +111,10 @@
 				C7DC56FC83F8B07BBB1A97F8 /* Pods */,
 				B22F00DD4297C5607BDD3806 /* Frameworks */,
 			);
+			indentWidth = 2;
 			name = QuickLookXD;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
