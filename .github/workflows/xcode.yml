@@ -30,7 +30,7 @@ jobs:
           echo "[${BUNDLE_PATH}]:"
           cd "${BUNDLE_PATH}" && ls
           # Archive the built generator as a zip file
-          echo "BUNDLE: ${BUNDLE_FILE) >>> ${PUBLISH_ZIP}"
+          echo "BUNDLE: ${BUNDLE_FILE} >>> ${PUBLISH_ZIP}"
           zip -9qr "${PUBLISH_ZIP}" "${BUNDLE_FILE}"
           echo "[$(pwd)]:" && ls "${PUBLISH_ZIP}"
           # Ensure the directory to publish exists
