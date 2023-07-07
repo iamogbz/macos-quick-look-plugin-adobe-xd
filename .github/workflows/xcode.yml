@@ -12,12 +12,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Build
+      - name: Install
         uses: mxcl/xcodebuild@v2
         with:
           xcode: ^14
-          action: build
-          configuration: Debug
-          scheme: QuickLookXD
-          verbosity: verbose
-          workspace: QuickLookXD.xcworkspace
+          action: none
+      - name: Build
+        run: |
+          pod install
+          xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD clean build
