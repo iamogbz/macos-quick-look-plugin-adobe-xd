@@ -44,6 +44,7 @@ jobs:
           # Make the packaging variables available
           echo "BUNDLE_PATH=${BUNDLE_PATH}" >> "$GITHUB_ENV"
           echo "BUNDLE_FILE=${BUNDLE_FILE}" >> "$GITHUB_ENV"
+          echo "PUBLISH_DIR=${PUBLISH_DIR}" >> "$GITHUB_ENV"
           echo "PUBLISH_ZIP=${PUBLISH_ZIP}" >> "$GITHUB_ENV"
       - uses: actions/upload-artifact@v3
         with:
