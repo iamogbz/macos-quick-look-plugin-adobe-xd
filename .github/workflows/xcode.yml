@@ -21,3 +21,12 @@ jobs:
         run: |
           pod install
           xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD clean build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.actor != 'dependabot[bot]' && github.actor != 'dependabot-preview[bot]'
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: dist
+          destination_dir: ${{ github.sha }}
+          keep_files: true
