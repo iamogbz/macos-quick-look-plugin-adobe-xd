@@ -45,7 +45,7 @@ brew cask install quicklookxd
 
 ## Demo
 
-![Image showing list of XD files with thumbnails and preview](./docs/example/screenshot01.png)
+![Image showing list of XD files with thumbnails and preview][screenshot01]
 
 ## Notes
 
@@ -82,4 +82,5 @@ Raise an issue or submit a PR to add more supported UTIs or fix bugs identified.
 [ql-ase]: https://github.com/rsodre/QuickLookASE
 [ql-win-issue]: https://github.com/QL-Win/QuickLook/issues/307#issuecomment-1473989813
 [ql-xd-releases]: https://github.com/iamogbz/macos-quick-look-plugin-adobe-xd/releases
+[screenshot01]: https://raw.githubusercontent.com/iamogbz/macos-quick-look-plugin-adobe-xd/main/docs/example/screenshot01.png
 [xd-format-reference]: https://docs.fileformat.com/web/xd
