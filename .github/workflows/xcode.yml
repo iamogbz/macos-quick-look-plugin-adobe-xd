@@ -21,26 +21,26 @@ jobs:
         run: |
           pod install
           xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD clean build -quiet
-          
+          # Create variables to use in packaging
+          export PUBLISH_ZIP="archive.zip"
           export PUBLISH_DIR="/tmp/quicklookxdist"
-          export ZIP_FILENAME="archive.zip"
-          export BUILT_GENERATOR_FILENAME="$(xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD -showBuildSettings 2>&1 | grep CODESIGNING_FOLDER_PATH | cut -d '=' -f2 | tr -d '[:space:]')"
-          
-          echo "Making folder: ${PUBLISH_DIR}"
+          export BUNDLE_FILE="$(xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD -showBuildSettings 2>&1 | grep CODESIGNING_FOLDER_PATH | cut -d '=' -f2 | tr -d '[:space:]')"
+          export BUNDLE_PATH=$(dirname "${BUNDLE_FILE}")
+          # Enter the built generator bundle directory
+          echo "[${BUNDLE_PATH}]:"
+          cd "${BUNDLE_PATH}" && ls
+          # Archive the built generator as a zip file
+          echo "BUNDLE: ${BUNDLE_FILE) >>> ${PUBLISH_ZIP}"
+          zip -9qr "${PUBLISH_ZIP}" "${BUNDLE_FILE}"
+          echo "[$(pwd)]:" && ls "${PUBLISH_ZIP}"
+          # Ensure the directory to publish exists
+          echo "CREATE: ${PUBLISH_DIR}"
           mkdir -p "${PUBLISH_DIR}"
-          
-          echo "Change directory: ${BUILT_GENERATOR_FILENAME}"
-          cd "${BUILT_GENERATOR_FILENAME}/../"
-          pwd
-          
-          echo "Zipping: $(basename '${BUILT_GENERATOR_FILENAME}') >>> ${ZIP_FILENAME}"
-          zip -r "${ZIP_FILENAME}" "$(basename ${BUILT_GENERATOR_FILENAME})"
-          ls
-          
-          echo "Copying: ${ZIP_FILENAME} >>> ${PUBLISH_DIR}"
-          cp "${ZIP_FILENAME}" "${PUBLISH_DIR}"
-          
-          ls "${PUBLISH_DIR}"
+          # Move the bundle zip to the publish path
+          echo "MOVING: ${PUBLISH_ZIP} >>> ${PUBLISH_DIR}"
+          cp "${PUBLISH_ZIP}" "${PUBLISH_DIR}"
+          echo "[${PUBLISH_DIR}]:" && ls "${PUBLISH_DIR}"
+          # Make the publish path available to deploy
           echo "PUBLISH_DIR=${PUBLISH_DIR}" >> "$GITHUB_ENV"
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
