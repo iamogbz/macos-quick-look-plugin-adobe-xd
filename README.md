@@ -35,6 +35,16 @@ $ mdls -name kMDItemContentType ./docs/example/file01.xd
 kMDItemContentType = "com.adobe.xd.project"
 ```
 
+Testing the generated quick look bundle:
+
+```sh
+$ qlmanage -g QuickLookXD.qlgenerator -c com.adobe.xd.project -p document.xd
+Testing Quick Look preview with files:
+    /path/to/document.xd
+    - force using content type UTI: com.adobe.xd.project
+    - force using generator at path: /tmp/quicklookxd/QuickLookXD.qlgenerator
+```
+
 ## Demo
 
 ![Image showing list of XD files with thumbnails and preview](./docs/example/screenshot01.png)

@@ -1,0 +1,62 @@
+name: xcode - build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  build:
+    name: latest macos x
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install
+        uses: mxcl/xcodebuild@v2
+        with:
+          xcode: ^14
+          action: none
+      - name: Build
+        run: |
+          pod install
+          xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD clean build -quiet
+          # Create variables to use in packaging
+          export BUNDLE_FILEPATH="$(xcodebuild -configuration Debug -workspace QuickLookXD.xcworkspace -scheme QuickLookXD -showBuildSettings 2>&1 | grep CODESIGNING_FOLDER_PATH | cut -d '=' -f2 | tr -d '[:space:]')"
+          export BUNDLE_PATH=$(dirname "${BUNDLE_FILEPATH}")
+          export BUNDLE_FILE=$(basename "${BUNDLE_FILEPATH}")
+          export PUBLISH_DIR="/tmp/quicklookxdist"
+          export PUBLISH_ZIP="bundle.zip"
+          # Enter the built generator bundle directory
+          echo "[${BUNDLE_PATH}]:"
+          cd "${BUNDLE_PATH}" && ls
+          # Archive the built generator as a zip file
+          echo "BUNDLE: ${BUNDLE_FILE} >>> ${PUBLISH_ZIP}"
+          zip -9qr "${PUBLISH_ZIP}" "${BUNDLE_FILE}"
+          echo "[$(pwd)]:" && ls "${PUBLISH_ZIP}"
+          # Ensure the directory to publish exists
+          echo "CREATE: ${PUBLISH_DIR}"
+          mkdir -p "${PUBLISH_DIR}"
+          # Move the bundle zip to the publish path
+          echo "MOVING: ${PUBLISH_ZIP} >>> ${PUBLISH_DIR}"
+          cp "${PUBLISH_ZIP}" "${PUBLISH_DIR}"
+          echo "[${PUBLISH_DIR}]:" && ls "${PUBLISH_DIR}"
+          # Make the packaging variables available
+          echo "BUNDLE_PATH=${BUNDLE_PATH}" >> "$GITHUB_ENV"
+          echo "BUNDLE_FILE=${BUNDLE_FILE}" >> "$GITHUB_ENV"
+          echo "PUBLISH_ZIP=${PUBLISH_ZIP}" >> "$GITHUB_ENV"
+      - uses: actions/upload-artifact@v3
+        with:
+          path: |
+            ${{ env.BUNDLE_PATH }}/${{ env.BUNDLE_FILE }}
+            ${{ env.BUNDLE_PATH }}/${{ env.PUBLISH_ZIP }}
+          retention-days: 13
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main' && github.actor != 'dependabot[bot]' && github.actor != 'dependabot-preview[bot]'
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ${{ env.PUBLISH_DIR }}
+          publish_branch: dist
+          destination_dir: ${{ github.sha }}
+          keep_files: true
