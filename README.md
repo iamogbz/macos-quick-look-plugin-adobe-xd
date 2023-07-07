@@ -1,5 +1,7 @@
 # AdobeXD MacOS Quick Look Plugin
 
+[![xcode - build](https://github.com/iamogbz/macos-quick-look-plugin-adobe-xd/actions/workflows/xcode.yml/badge.svg?branch=main)](https://github.com/iamogbz/macos-quick-look-plugin-adobe-xd/actions/workflows/xcode.yml)
+
 Enables previews of XD files [(Adobe Experience Designer)][adobe-xd].
 
 ## Install
