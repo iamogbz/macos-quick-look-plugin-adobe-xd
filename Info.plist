@@ -10,7 +10,7 @@
 			<key>CFBundleTypeName</key>
 			<string>Adobe XD Project</string>
 			<key>LSHandlerRank</key>
-			<string>Default</string>
+			<string>Owner</string>
 			<key>CFBundleTypeRole</key>
 			<string>QLGenerator</string>
 			<key>LSItemContentTypes</key>
@@ -31,20 +31,22 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
 	<key>CFPlugInDynamicRegisterFunction</key>
 	<string></string>
 	<key>CFPlugInDynamicRegistration</key>
 	<string>NO</string>
 	<key>CFPlugInFactories</key>
 	<dict>
-		<key>${PRODUCT_BUNDLE_IDENTIFIER}</key>
+		<key>${PLUGIN_ID}</key>
 		<string>QuickLookGeneratorPluginFactory</string>
 	</dict>
 	<key>CFPlugInTypes</key>
 	<dict>
 		<key>5E2D9680-5022-40FA-B806-43349622E5B9</key>
 		<array>
-			<string>${PRODUCT_BUNDLE_IDENTIFIER}</string>
+			<string>${PLUGIN_ID}</string>
 		</array>
 	</dict>
 	<key>CFPlugInUnloadFunction</key>
@@ -59,5 +61,26 @@
 	<false/>
 	<key>QLThumbnailMinimumSize</key>
 	<real>17</real>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.adobe.xd.project</string>
+			<key>UTTypeDescription</key>
+			<string>Adobe XD Project</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.archive</string>
+			</array>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>xd</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

@@ -23,9 +23,9 @@ The `QuickLookXD.qlgenerator` bundle is unsigned so you may need to de-quarantin
 ```
 
 > You may need to use sudo for that command, depending on permissions.
-> 
+>
 > This bypasses Gatekeeper meaning that the signature isn't verified when run.
-> 
+>
 > Which removes an important safety feature, so only use with trusted apps.
 
 You may need to restart finder or your system, but first refresh QuickLook plugin list.
@@ -59,7 +59,7 @@ kMDItemContentType = "com.adobe.xd.project"
 Testing the generated quick look bundle:
 
 ```sh
-$ qlmanage -g QuickLookXD.qlgenerator -c com.adobe.xd.project -p document.xd
+$ qlmanage -g QuickLookXD.qlgenerator -c com.adobe.xd.project -p document.xd -o /tmp/
 Testing Quick Look preview with files:
     /tmp/quicklookxd/document.xd
     - force using content type UTI: com.adobe.xd.project

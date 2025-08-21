@@ -8,7 +8,7 @@
 // -----------------------------------------------------------------------------
 
 // Using plugin product identifier
-#define PLUGIN_ID "com.qbrkts.quicklookxd"
+#define PLUGIN_ID "A8585548-4464-4494-8398-E36C3C783E65"
 
 //
 // Below is the generic glue code for all plug-ins.
@@ -78,18 +78,18 @@ static QLGeneratorInterfaceStruct myInterfaceFtbl = {
 QuickLookGeneratorPluginType *AllocQuickLookGeneratorPluginType(CFUUIDRef inFactoryID)
 {
   QuickLookGeneratorPluginType *theNewInstance;
-  
+
   theNewInstance = (QuickLookGeneratorPluginType *)malloc(sizeof(QuickLookGeneratorPluginType));
   memset(theNewInstance,0,sizeof(QuickLookGeneratorPluginType));
-  
+
   /* Point to the function table Malloc enough to store the stuff and copy the filler from myInterfaceFtbl over */
   theNewInstance->conduitInterface = malloc(sizeof(QLGeneratorInterfaceStruct));
   memcpy(theNewInstance->conduitInterface,&myInterfaceFtbl,sizeof(QLGeneratorInterfaceStruct));
-  
+
   /*  Retain and keep an open instance refcount for each factory. */
   theNewInstance->factoryID = CFRetain(inFactoryID);
   CFPlugInAddInstanceForFactory(inFactoryID);
-  
+
   /* This function returns the IUnknown interface so set the refCount to one. */
   theNewInstance->refCount = 1;
   return theNewInstance;
@@ -106,11 +106,11 @@ QuickLookGeneratorPluginType *AllocQuickLookGeneratorPluginType(CFUUIDRef inFact
 void DeallocQuickLookGeneratorPluginType(QuickLookGeneratorPluginType *thisInstance)
 {
   CFUUIDRef theFactoryID;
-  
+
   theFactoryID = thisInstance->factoryID;
   /* Free the conduitInterface table up */
   free(thisInstance->conduitInterface);
-  
+
   /* Free the instance structure */
   free(thisInstance);
   if (theFactoryID){
@@ -127,9 +127,9 @@ void DeallocQuickLookGeneratorPluginType(QuickLookGeneratorPluginType *thisInsta
 HRESULT QuickLookGeneratorQueryInterface(void *thisInstance,REFIID iid,LPVOID *ppv)
 {
   CFUUIDRef interfaceID;
-  
+
   interfaceID = CFUUIDCreateFromUUIDBytes(kCFAllocatorDefault,iid);
-  
+
   if (CFEqual(interfaceID,kQLGeneratorCallbacksInterfaceID)){
     /* If the Right interface was requested, bump the ref count,
      * set the ppv parameter equal to the instance, and
@@ -188,7 +188,7 @@ void *QuickLookGeneratorPluginFactory(CFAllocatorRef allocator,CFUUIDRef typeID)
 {
   QuickLookGeneratorPluginType *result;
   CFUUIDRef         uuid;
-  
+
   /* If correct type is being requested, allocate an
    * instance of kQLGeneratorTypeID and return the IUnknown interface.
    */
