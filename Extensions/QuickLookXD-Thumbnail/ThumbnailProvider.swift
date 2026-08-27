@@ -2,20 +2,21 @@
 // ThumbnailProvider.swift
 // QuickLookXD-Thumbnail
 //
-// Skeleton for a QLThumbnailProvider that attempts to extract a preview PNG from the .xd (zip) and draw it.
-// For local testing this uses the system unzip tool to stream a candidate PNG out of the archive.
-// Replace the extraction logic with a library (ZIPFoundation / SSZipArchive) for production use.
+// Thumbnail provider updated to use SSZipArchive to extract a candidate preview PNG from the .xd archive.
+// This extracts the archive to a temporary directory and looks for common preview paths, then reads the image into memory.
+// Using SSZipArchive requires linking the SSZipArchive library/framework into the extension target.
 //
 
 import QuickLookThumbnailing
 import CoreGraphics
 import AppKit
+import SSZipArchive
 
 class ThumbnailProvider: QLThumbnailProvider {
     override func provideThumbnail(for request: QLFileThumbnailRequest, _ handler: @escaping (QLThumbnailReply?, Error?) -> Void) {
         let size = request.maximumSize
 
-        // Try to extract a preview image from the .xd file
+        // Try to extract a preview image from the .xd file using SSZipArchive
         var previewImage: NSImage? = nil
         if let data = extractPreviewPNG(from: request.fileURL) {
             previewImage = NSImage(data: data)
@@ -30,13 +31,8 @@ class ThumbnailProvider: QLThumbnailProvider {
 
             if let image = previewImage {
                 // Draw extracted preview scaled to fit
-                let rep = image.bestRepresentation(for: CGRect(origin: .zero, size: size), context: nil, hints: nil)
                 let imageRect = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: .zero, size: size))
-                #if os(macOS)
                 image.draw(in: imageRect)
-                #else
-                // Fallback drawing path
-                #endif
             } else {
                 // Draw a simple centered filename placeholder
                 let fileURL = request.fileURL.lastPathComponent as NSString
@@ -59,8 +55,7 @@ class ThumbnailProvider: QLThumbnailProvider {
         handler(reply, nil)
     }
 
-    // Simple helper that attempts to stream common preview image paths from the .xd archive using the system unzip tool.
-    // This is intended for a skeleton/demo only. Use a proper zip library for robust extraction in production.
+    // Use SSZipArchive to extract to a temporary directory and find a candidate preview image
     private func extractPreviewPNG(from url: URL) -> Data? {
         let candidatePaths = [
             "preview.png",
@@ -72,35 +67,41 @@ class ThumbnailProvider: QLThumbnailProvider {
             "thumbnail.png"
         ]
 
+        let fm = FileManager.default
+        let tmpDir = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(UUID().uuidString)
+
+        do {
+            try fm.createDirectory(at: tmpDir, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            return nil
+        }
+
+        // Unzip into tmpDir
+        let success = SSZipArchive.unzipFile(atPath: url.path, toDestination: tmpDir.path)
+        if !success {
+            try? fm.removeItem(at: tmpDir)
+            return nil
+        }
+
         for entry in candidatePaths {
-            let process = Process()
-            process.executableURL = URL(fileURLWithPath: "/usr/bin/unzip")
-            process.arguments = ["-p", url.path, entry]
-
-            let outPipe = Pipe()
-            process.standardOutput = outPipe
-            process.standardError = Pipe()
-
-            do {
-                try process.run()
-            } catch {
-                continue
-            }
-            process.waitUntilExit()
-
-            if process.terminationStatus == 0 {
-                let data = outPipe.fileHandleForReading.readDataToEndOfFile()
-                // Quick PNG signature check
-                if data.count > 8 {
-                    let pngSig: [UInt8] = [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]
-                    let header = [UInt8](data.prefix(8))
-                    if header == pngSig {
-                        return data
+            let candidateURL = tmpDir.appendingPathComponent(entry)
+            if fm.fileExists(atPath: candidateURL.path) {
+                if let data = try? Data(contentsOf: candidateURL) {
+                    // cleanup
+                    try? fm.removeItem(at: tmpDir)
+                    // Quick PNG signature check
+                    if data.count > 8 {
+                        let pngSig: [UInt8] = [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]
+                        let header = [UInt8](data.prefix(8))
+                        if header == pngSig {
+                            return data
+                        }
                     }
                 }
             }
         }
 
+        try? fm.removeItem(at: tmpDir)
         return nil
     }
 }

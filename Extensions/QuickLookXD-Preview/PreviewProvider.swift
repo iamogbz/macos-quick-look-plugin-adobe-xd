@@ -2,17 +2,18 @@
 // PreviewProvider.swift
 // QuickLookXD-Preview
 //
-// Skeleton for a QLPreviewProvider that tries to extract a preview PNG from the .xd archive and embed it in a simple HTML preview.
-// Uses the system unzip tool for streaming a candidate preview image out of the .xd. Replace with ZIPFoundation/SSZipArchive for production.
+// Preview provider updated to use SSZipArchive to extract a candidate preview PNG from the .xd archive and embed it in HTML.
+// Note: the extension target must link SSZipArchive for this to compile and run.
 //
 
 import QuickLookPreviewing
 import UniformTypeIdentifiers
 import Foundation
+import SSZipArchive
 
 class PreviewProvider: QLPreviewProvider {
     override func providePreview(for request: QLFilePreviewRequest, _ handler: @escaping (Error?) -> Void) {
-        // Try to extract preview.png from the .xd
+        // Try to extract preview.png from the .xd using SSZipArchive
         var html: String
         if let data = extractPreviewPNG(from: request.fileURL) {
             let base64 = data.base64EncodedString()
@@ -79,34 +80,38 @@ class PreviewProvider: QLPreviewProvider {
             "thumbnail.png"
         ]
 
+        let fm = FileManager.default
+        let tmpDir = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(UUID().uuidString)
+
+        do {
+            try fm.createDirectory(at: tmpDir, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            return nil
+        }
+
+        let success = SSZipArchive.unzipFile(atPath: url.path, toDestination: tmpDir.path)
+        if !success {
+            try? fm.removeItem(at: tmpDir)
+            return nil
+        }
+
         for entry in candidatePaths {
-            let process = Process()
-            process.executableURL = URL(fileURLWithPath: "/usr/bin/unzip")
-            process.arguments = ["-p", url.path, entry]
-
-            let outPipe = Pipe()
-            process.standardOutput = outPipe
-            process.standardError = Pipe()
-
-            do {
-                try process.run()
-            } catch {
-                continue
-            }
-            process.waitUntilExit()
-
-            if process.terminationStatus == 0 {
-                let data = outPipe.fileHandleForReading.readDataToEndOfFile()
-                if data.count > 8 {
-                    let pngSig: [UInt8] = [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]
-                    let header = [UInt8](data.prefix(8))
-                    if header == pngSig {
-                        return data
+            let candidateURL = tmpDir.appendingPathComponent(entry)
+            if fm.fileExists(atPath: candidateURL.path) {
+                if let data = try? Data(contentsOf: candidateURL) {
+                    try? fm.removeItem(at: tmpDir)
+                    if data.count > 8 {
+                        let pngSig: [UInt8] = [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]
+                        let header = [UInt8](data.prefix(8))
+                        if header == pngSig {
+                            return data
+                        }
                     }
                 }
             }
         }
 
+        try? fm.removeItem(at: tmpDir)
         return nil
     }
 }
